@@ -3,52 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Scrapbook ❤️</title>
+    <title>Our Scrapbook: Story of Us ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <h1>Our Digital Scrapbook ✨</h1>
-        <p>Klik tiap lembaran untuk membuka kenangan kita...</p>
+    <!-- Efek animasi kelopak bunga jatuh pas pertama masuk web -->
+    <div class="falling-elements"></div>
+
+    <div class="book-container">
+        <div class="book" id="scrapbook">
+            
+            <!-- ====== COVER DEPAN (Sesuai Gambar) ====== -->
+            <div class="page cover-front active">
+                <div class="spiral-binding"></div>
+                <div class="cover-design">
+                    <div class="grid-patch"></div>
+                    <div class="butterfly-stamp">🦋</div>
+                    <div class="ransom-title">
+                        <span class="letter l1">S</span>
+                        <span class="letter l2">t</span>
+                        <span class="letter l3">o</span>
+                        <span class="letter l4">r</span>
+                        <span class="letter l5">y</span>
+                    </div>
+                    <div class="ransom-subtitle">
+                        <span class="letter l6">o</span>
+                        <span class="letter l7">f</span>
+                        <span class="letter l8">U</span>
+                        <span class="letter l9">s</span>
+                    </div>
+                    <button class="btn-start" onclick="nextPage()">Buka Buku ✨</button>
+                </div>
+            </div>
+
+            <!-- ====== HALAMAN 1 & 2 (The Day We Met) ====== -->
+            <div class="page">
+                <div class="spiral-binding"></div>
+                <div class="page-inner">
+                    <h2 class="tape-title">Chapter 1: Awal Mula</h2>
+                    <div class="polaroid">
+                        <img src="https://picsum.photos/id/1025/300/200" alt="Foto Pertama">
+                        <p class="caption">Hari Pertama Kenal 📅</p>
+                    </div>
+                    <p class="journal-text">Inget gak waktu pertama kali kita chat? Aku grogi banget tau. Gak nyangka dari yang cuma iseng nanya, sekarang malah jadi orang paling penting di hidup aku.</p>
+                </div>
+            </div>
+
+            <!-- ====== HALAMAN 3 & 4 (Our Favorite Date) ====== -->
+            <div class="page">
+                <div class="spiral-binding"></div>
+                <div class="page-inner">
+                    <h2 class="tape-title">Chapter 2: Serunya Bareng Kamu</h2>
+                    <div class="polaroid float-right">
+                        <img src="https://picsum.photos/id/103/300/200" alt="Foto Jalan-jalan">
+                        <p class="caption">Random Trip kita 🗺️</p>
+                    </div>
+                    <p class="journal-text">Setiap jalan sama kamu itu selalu seru, bahkan kalau kita cuma keliling kota gak jelas atau neduh kehujanan di emperan toko. Jalannya biasa aja, jadinya luar biasa karena ada kamu.</p>
+                </div>
+            </div>
+
+            <!-- ====== HALAMAN 5 & 6 (Love Letter / Paling Interaktif) ====== -->
+            <div class="page">
+                <div class="spiral-binding"></div>
+                <div class="page-inner">
+                    <h2 class="tape-title">Chapter 3: Kenapa Aku Sayang Kamu</h2>
+                    <ul class="reasons-list">
+                        <li>✨ Kamu selalu bisa bikin aku ketawa pas lagi pusing.</li>
+                        <li>✨ Cara kamu dengerin cerita random aku berjam-jam.</li>
+                        <li>✨ Kamu sabar banget ngadepin sifat aku.</li>
+                    </ul>
+                    <div class="interactive-envelope" onclick="openEnvelope(this)">
+                        <div class="envelope-top"></div>
+                        <div class="envelope-body">Klik Suratnya 💌</div>
+                        <div class="secret-letter">
+                            <p>"Kamu itu beneran berharga banget buat aku. Jangan pernah ragu ya sama sayangku ke kamu. Love you!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== BACK COVER / HALAMAN PENUTUP ====== -->
+            <div class="page cover-back">
+                <div class="spiral-binding"></div>
+                <div class="cover-design-back">
+                    <h3>To Be Continued...</h3>
+                    <p>Mari buat lebih banyak cerita seru bareng-bareng lagi ya! ❤️</p>
+                    <button class="btn-start" onclick="resetBook()">Baca Lagi 🔄</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="scrapbook-container">
-        <!-- Lembaran 1 -->
-        <div class="scrapbook-page" onclick="togglePage(this)">
-            <div class="page-cover">
-                <span>Klik Aku 💌</span>
-            </div>
-            <div class="page-content">
-                <h3>The Day We Met</h3>
-                <!-- Ganti source gambar dengan foto kalian -->
-                <img src="https://via.placeholder.com/150" alt="Foto Kenangan">
-                <p>"Hari pertama kenal kamu, semesta langsung terasa beda. Terima kasih sudah hadir ya!"</p>
-            </div>
-        </div>
-
-        <!-- Lembaran 2 -->
-        <div class="scrapbook-page" onclick="togglePage(this)">
-            <div class="page-cover">
-                <span>Buka Ini 🧸</span>
-            </div>
-            <div class="page-content">
-                <h3>Favorite Memories</h3>
-                <img src="https://via.placeholder.com/150" alt="Foto Kenangan">
-                <p>"Inget ga waktu kita jalan-jalan ke sini? Capek tapi seru banget karena bareng kamu."</p>
-            </div>
-        </div>
-
-        <!-- Lembaran 3 -->
-        <div class="scrapbook-page" onclick="togglePage(this)">
-            <div class="page-cover">
-                <span>Terakhir ❤️</span>
-            </div>
-            <div class="page-content">
-                <h3>A Little Note</h3>
-                <p>Happy anniversary / happy birthday! I love you more than words can say. Selalu sama-sama terus ya.</p>
-            </div>
-        </div>
+    <!-- Tombol Navigasi Manual -->
+    <div class="nav-buttons">
+        <button id="prevBtn" onclick="prevPage()" disabled>⬅️ Kembali</button>
+        <button id="nextBtn" onclick="nextPage()">Lanjut ➡️</button>
     </div>
 
     <script src="script.js"></script>
